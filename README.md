@@ -8,4 +8,4 @@ Le but du TP sera de corriger le code de la classe `Complex` en s'aidant de test
 ## Membres du projet
 
 - DAUNOIS , Nathan , Groupe 1.1
-- NOM, prénom, numéro de groupe, du deuxième participant
+- COZZOLINO , Christine , Groupe 1.1
