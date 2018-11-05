@@ -2,6 +2,9 @@ package mandelbrot;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+import java.util.concurrent.Callable;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -132,5 +135,23 @@ public class ComplexTest {
         Complex c1 = new Complex(real, imaginary);
         Complex c2 = new Complex(real, imaginary);
         assertEquals(c1.hashCode(), c2.hashCode());
+    }
+
+    @Test
+    void testComplexReal(){
+
+        Random random = new Random(0);
+        double real ;
+
+        for ( int ComplexNumber = 0 ; ComplexNumber < 10 ;ComplexNumber++){
+
+          real  = random.nextDouble();
+          Complex complex = new Complex(real, 0);
+          assertEquals(real,complex.real);
+
+
+        }
+
+
     }
 }
