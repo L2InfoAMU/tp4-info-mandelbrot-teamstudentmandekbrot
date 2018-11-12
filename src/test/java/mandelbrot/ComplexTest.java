@@ -2,14 +2,16 @@ package mandelbrot;
 
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
 import java.util.Random;
+import java.util.Stack;
 import java.util.concurrent.Callable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class ComplexTest {
+    public class ComplexTest {
     private final Complex onePlusI = new Complex(1, 1);
     private final Complex minusI = new Complex(0, -1);
     private final Complex minusOne = new Complex(-1, 0);
@@ -263,5 +265,27 @@ public class ComplexTest {
 
 
     }
+
+    @Test
+    void testComplexAndObject(){
+
+        Object[] objects = new Object[] {"bonjour ",new Complex(5,5),new Point(5,7)};
+
+        Complex complex = new Complex(5, 5);
+
+        boolean ok = true ;
+
+        assertEquals(complex,objects[1]);
+        assertNotEquals(complex,objects[0]);
+        assertNotEquals(complex,objects[2]);
+
+        assertEquals(ok,complex.equals(objects[1]));
+        assertNotEquals(ok,complex.equals(objects[0]));
+        assertNotEquals(ok,complex.equals(objects[2]));
+
+
+
+    }
+
 
 }
