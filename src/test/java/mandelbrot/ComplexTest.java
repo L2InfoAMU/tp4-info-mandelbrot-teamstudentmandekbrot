@@ -2,6 +2,7 @@ package mandelbrot;
 
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
 import java.util.Random;
 import java.util.concurrent.Callable;
 
@@ -276,6 +277,20 @@ public class ComplexTest {
             assertEquals(new Complex(complex.real * lambda, complex.imaginary * lambda), complex.scale(lambda));
 
         }
+
+    }
+
+    @Test
+    void testComplexLikeObject(){
+
+        Object[] object = new Object[] {"je vais tapper Christine demain xD",new Complex(2, 2),new Point(2,2)};
+
+        boolean ok = true ;
+
+        assertNotEquals(object[1].equals(object[0]),ok);
+        assertEquals(object[1].equals(onePlusI.scale(2)),ok);
+        assertNotEquals(object[2].equals(object[0]),ok);
+
 
     }
 
