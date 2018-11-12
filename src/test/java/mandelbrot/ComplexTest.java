@@ -264,4 +264,19 @@ public class ComplexTest {
 
     }
 
+    @Test
+    void testScale(){
+        Random random = new Random(0);
+        Complex complex;
+
+        for (int testNumber = 0; testNumber < 10; testNumber++) {
+            double lambda = random.nextDouble();
+
+            complex = new Complex(random.nextDouble(),random.nextDouble());
+            assertEquals(new Complex(complex.real * lambda, complex.imaginary * lambda), complex.scale(lambda));
+
+        }
+
+    }
+
 }
