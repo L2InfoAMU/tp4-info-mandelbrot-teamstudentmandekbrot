@@ -122,8 +122,8 @@ public class Complex {
      */
     Complex multiply(Complex factor) {
         return new Complex(
-                this.real * factor.real + this.real * factor.imaginary,
-                factor.real * this.imaginary - this.imaginary * factor.imaginary
+                this.real * factor.real - this.imaginary * factor.imaginary,
+                factor.real * this.imaginary + this.real * factor.imaginary
         );
     }
 
@@ -186,8 +186,8 @@ public class Complex {
     Complex pow(int p) {
         if (p == 0) return ONE;
         else if( p == 1) return this;
-
-        Complex result = (this.multiply(this)).multiply(pow(p/2));
+        Complex complex = pow(p/2);
+        Complex result = complex.multiply(complex);
 
         if (p % 2 == 1) result = result.multiply(this);
         return result;

@@ -214,7 +214,8 @@ public class ComplexTest {
 
             }
 
-            assertEquals(new Complex(complex[0].real*complex[1].real-(complex[0].imaginary*complex[1].imaginary),complex[0].real*complex[1].imaginary+complex[0].imaginary*complex[1].real), complex[0].multiply(complex[1]));
+            assertEquals(new Complex(complex[0].real*complex[1].real-(complex[0].imaginary*complex[1].imaginary),
+                    complex[0].real*complex[1].imaginary+complex[0].imaginary*complex[1].real), complex[0].multiply(complex[1]));
 
         }
 
@@ -248,6 +249,18 @@ public class ComplexTest {
             assertEquals(Math.sqrt(complex.real*complex.real+complex.imaginary*complex.imaginary),complex.modulus());
 
         }
+
+    }
+
+    @Test
+    void testComplexPow(){
+
+    Complex[] complex = new Complex[] { new Complex( 1 , 0),new Complex(1,0)};
+
+
+    assertEquals(complex[0],(complex[0].pow(8)));
+    assertEquals(complex[1],complex[1].pow(10));
+
 
     }
 
