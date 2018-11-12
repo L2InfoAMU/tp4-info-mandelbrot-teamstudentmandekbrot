@@ -198,4 +198,57 @@ public class ComplexTest {
 
 
     }
+    @Test
+    void testMultiplyComplex(){
+
+
+        Random random = new Random(0);
+        Complex[] complex = new Complex[2];
+
+        for (int testNumber = 0; testNumber < 5; testNumber++) {
+
+            for (int indexInTabular = 0; indexInTabular < 2; indexInTabular++) {
+
+
+                complex[indexInTabular] = new Complex(random.nextDouble(), random.nextDouble());
+
+            }
+
+            assertEquals(new Complex(complex[0].real*complex[1].real-(complex[0].imaginary*complex[1].imaginary),complex[0].real*complex[1].imaginary+complex[0].imaginary*complex[1].real), complex[0].multiply(complex[1]));
+
+        }
+
+
+    }
+
+    @Test
+    void testSquaredModulus(){
+
+        Random random = new Random(0);
+        Complex complex ;
+
+        for (int testNumber = 0; testNumber < 10; testNumber++) {
+
+            complex = new Complex(random.nextDouble(),random.nextDouble());
+            assertEquals(complex.real*complex.real+complex.imaginary*complex.imaginary,complex.squaredModulus());
+
+        }
+
+
+    }
+    @Test
+    void testModulus(){
+
+        Random random = new Random(0);
+        Complex complex ;
+
+        for (int testNumber = 0; testNumber < 10; testNumber++) {
+
+            complex = new Complex(random.nextDouble(),random.nextDouble());
+            assertEquals(Math.sqrt(complex.real*complex.real+complex.imaginary*complex.imaginary),complex.modulus());
+
+        }
+
+    }
+
 }
