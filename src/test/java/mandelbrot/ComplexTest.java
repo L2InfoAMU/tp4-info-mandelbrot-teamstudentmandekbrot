@@ -247,31 +247,21 @@ public class ComplexTest {
 
             complex = new Complex(random.nextDouble(),random.nextDouble());
             assertEquals(Math.sqrt(complex.real*complex.real+complex.imaginary*complex.imaginary),complex.modulus());
+
         }
+
     }
 
     @Test
     void testComplexPow(){
-        Complex[] complex = new Complex[] { new Complex( 1 , 0),new Complex(1,0)};
 
-        assertEquals(complex[0],(complex[0].pow(8)));
-        assertEquals(complex[1],complex[1].pow(10));
-    }
+    Complex[] complex = new Complex[] { new Complex( 1 , 0),new Complex(1,0)};
 
-    @Test
-    void testScale(){
-        Random random = new Random(0);
-        Complex complex;
 
-        for (int testNumber = 0; testNumber < 10; testNumber++) {
-            double lambda = random.nextDouble();
+    assertEquals(complex[0],(complex[0].pow(8)));
+    assertEquals(complex[1],complex[1].pow(10));
 
-            complex = new Complex(random.nextDouble(),random.nextDouble());
-            assertEquals(new Complex(complex.real * lambda, complex.imaginary * lambda), complex.scale(lambda));
-
-        }
 
     }
-
 
 }
