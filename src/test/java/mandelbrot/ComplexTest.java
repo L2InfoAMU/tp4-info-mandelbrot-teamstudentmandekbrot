@@ -283,7 +283,7 @@ public class ComplexTest {
     @Test
     void testComplexLikeObject(){
 
-        Object[] object = new Object[] {"je vais tapper Christine demain xD",new Complex(2, 2),new Point(2,2)};
+        Object[] object = new Object[] {"this is not a Complex",new Complex(2, 2),new Point(2,2)};
 
         boolean ok = true ;
 

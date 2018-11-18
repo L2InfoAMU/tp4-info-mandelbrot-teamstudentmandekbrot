@@ -4,7 +4,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Control;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import jdk.nashorn.api.tree.SwitchTree;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main extends Application {
 
@@ -17,7 +24,9 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args )  {
+
+
         launch(args);
     }
 }

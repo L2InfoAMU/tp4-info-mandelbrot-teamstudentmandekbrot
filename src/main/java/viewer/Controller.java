@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 /**
  * Controls the color of the pixels of the canvas.
@@ -32,19 +33,77 @@ public class Controller implements Initializable {
     private Mandelbrot mandelbrot = new Mandelbrot(); /* the algorithm */
 
 
+
     /* positions of colors in the histogram */
     private double[] breakpoints = {0., 0.75, 0.85, 0.95, 0.99, 1.0};
     /* colors of the histogram */
-    private Color[] colors =
-            {Color.gray(0.2),
-                    Color.gray(0.7),
-                    Color.rgb(55, 118, 145),
-                    Color.rgb(63, 74, 132),
-                    Color.rgb(145, 121, 82),
-                    Color.rgb(250, 250, 200)
-            };
+
+
+   // private Color[] colors ; (not used anymore )
+
+    public Color[] setColors() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Which color configuration do you prefer ? (hot colors(1) , cold colors  (2),contrasts colors (3) , default " +
+                "configuration(4)");
+        int reponse = scanner.nextInt();
+
+        switch (reponse) {
+
+            case 1:
+
+
+                return new Color[]{Color.gray(0.2),
+                        Color.gray(0.7),
+                        Color.rgb(179, 31, 3),
+                        Color.rgb(132, 83, 17),
+                        Color.rgb(145, 121, 82),
+                        Color.rgb(250, 6, 52)};
+
+
+            case 2:
+
+                return new Color[]{
+                        Color.gray(0.2),
+                        Color.gray(0.7),
+                        Color.rgb(4, 0, 145),
+                        Color.rgb(93, 0, 132),
+                        Color.rgb(145, 121, 82),
+                        Color.rgb(250, 250, 200)};
+
+
+            case 3:
+
+                return new Color[]{
+                        Color.gray(0.2),
+                        Color.gray(0.7),
+                        Color.rgb(0, 135, 23),
+                        Color.rgb(180, 10, 10),
+                        Color.rgb(14, 12, 82),
+                        Color.rgb(250, 250, 200)};
+
+
+
+            default:
+
+                return new Color[]{
+                        Color.gray(0.2),
+                        Color.gray(0.7),
+                        Color.rgb(55, 118, 145),
+                        Color.rgb(63, 74, 132),
+                        Color.rgb(145, 121, 82),
+                        Color.rgb(250, 250, 200)};
+        }
+
+
+
+    }
+
+
+
     /* algorithm to generate the distribution of colors */
-    private Histogram histogram = new Histogram(breakpoints, colors);
+    private Histogram histogram = new Histogram(breakpoints, setColors());
 
     /**
      * Method called when the graphical interface is loaded
